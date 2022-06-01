@@ -1,0 +1,19 @@
+<div class="sidenav">
+    <mat-toolbar color="primary">
+        <span>Use Cases</span>
+    </mat-toolbar>
+    <nav>
+        <mat-nav-list>
+            <ng-container *ngFor="let cat of categories">
+                <!-- <h3 matSubheader>{{ cat }}</h3> -->
+                <a *ngFor="let route of routes[cat]" mat-list-item [routerLink]="'/' + route.path" routerLinkActive="active">
+          {{ route.data.label }}
+        </a>
+                <mat-divider></mat-divider>
+            </ng-container>
+        </mat-nav-list>
+    </nav>
+</div>
+<section class="content">
+    <router-outlet></router-outlet>
+</section>
